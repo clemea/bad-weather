@@ -9,12 +9,17 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "leaflet": "^1.5.1",
     "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
     "register-service-worker": "^1.6.2",
     "suncalc": "^1.8.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-pxtorem": "^4.0.1",
     "vue": "^2.6.10",
+    "vue-chartjs": "^3.4.2",
     "vue2-leaflet": "^2.1.1",
     "vuex": "^3.0.1"
   },

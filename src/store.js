@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import _shuffle from 'lodash/shuffle';
-import testCoords from '@/testCoord.json';
+import _shuffle from 'lodash/shuffle'
+import testCoords from '@/testCoord.json'
 
 Vue.use(Vuex)
 
@@ -80,12 +80,22 @@ export default new Vuex.Store({
 				coord
 			)
 		},
+		resetPlacesInfo({ commit }) {
+			commit(
+				'setPlaceSuggested',
+				false
+			)
+			commit(
+				'setPlaceNotFound',
+				false
+			)
+		},
 		// todo: move to api
 		fetchWeather({ commit }, { lat, lng }) {
-			return new Promise((resolve, reject) => {
+			return new Promise((resolve) => {
 				const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${
 					process.env.VUE_APP_WEATHER_KEY
-					}&units=metric`
+				}&units=metric`
 
 				fetch(url)
 					.then(response => response.json())
@@ -95,7 +105,7 @@ export default new Vuex.Store({
 			})
 		},
 
-		getWeather({ state, commit, dispatch }, coord) {
+		getWeather({ commit, dispatch }, coord) {
 			dispatch(
 				'fetchWeather',
 				coord
@@ -111,7 +121,7 @@ export default new Vuex.Store({
 		getForecast({ commit }, { lat, lng }) {
 			const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lng}&APPID=${
 				process.env.VUE_APP_WEATHER_KEY
-				}&units=metric&cnt=7`
+			}&units=metric&cnt=7`
 
 			fetch(url)
 				.then(response => response.json())
@@ -137,10 +147,9 @@ export default new Vuex.Store({
 			)
 		},
 		checkBadWeather({ state, commit }) {
-			const ifWeatherisBad = state.weather.main.temp < state.minTemp
 			commit(
 				'setBadWeatherStatus',
-				ifWeatherisBad
+				state.weather.main.temp < state.minTemp
 			)
 		},
 
@@ -156,10 +165,9 @@ export default new Vuex.Store({
 					'fetchWeather',
 					placeCoord
 				).then((response) => {
-					console.warn(response.main.temp);
+					console.warn(response.main.temp)
 					if (response.main.temp >= state.minTemp) {
-
-						commit('ifWeatherisBad', false)
+						commit('setBadWeatherStatus', false)
 						commit(
 							'setPlaceSuggested',
 							true

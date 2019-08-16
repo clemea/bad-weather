@@ -5,22 +5,36 @@
 </template>
 
 <script>
-import Weather from "@/components/Weather.vue";
+import Weather from '@/components/Weather.vue'
 
 export default {
-	name: "app",
+	name: 'app',
 	components: {
 		Weather
 	}
-};
+}
 </script>
 
 <style>
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url('~@/assets/bg.jpg');
+	background-size: cover;
+}
 #app {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #2c3e50;
-	margin-top: 60px;
+	/* color: #2c3e50; */
+	/* margin-top: 60px; */
 }
 </style>
