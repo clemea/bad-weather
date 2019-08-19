@@ -14,7 +14,7 @@
 		</ul>
 		<div v-show="badWeather && !placeNotFound">
 			Ugh...
-			<span @click="refreshMap" class="weatherInfo__refresher"
+			<span @click="getNewPlace" class="weatherInfo__refresher"
 				>Take me somewhere!</span
 			>
 		</div>
@@ -34,21 +34,21 @@
 </template>
 
 <script>
-import moment from "moment";
-import SunCalc from "suncalc";
-import { mapActions, mapState } from "vuex";
+import moment from 'moment'
+import SunCalc from 'suncalc'
+import { mapActions, mapState } from 'vuex'
 
 export default {
 	data() {
-		return {};
+		return {}
 	},
 	computed: {
 		...mapState([
-			"weather",
-			"coords",
-			"badWeather",
-			"placeSuggested",
-			"placeNotFound"
+			'weather',
+			'coords',
+			'badWeather',
+			'placeSuggested',
+			'placeNotFound'
 		]),
 		sunInfo() {
 			if (this.coords) {
@@ -56,39 +56,36 @@ export default {
 					new Date(),
 					this.coords.lat,
 					this.coords.lng
-				);
+				)
 			}
-			return null;
+			return null
 		},
 		sunrise() {
 			return Number.isNaN(Date.parse(this.sunInfo.sunrise))
 				? null
-				: moment(this.sunInfo.sunrise).format("HH:mm");
+				: moment(this.sunInfo.sunrise).format('HH:mm')
 		},
 		sunset() {
 			return Number.isNaN(Date.parse(this.sunInfo.sunset))
 				? null
-				: moment(this.sunInfo.sunset).format("HH:mm");
+				: moment(this.sunInfo.sunset).format('HH:mm')
 		},
 		googleMapsLink() {
 			return `http://maps.google.com/maps?q=&layer=c&cbll=${
 				this.coords.lat
-			},${this.coords.lng}&cbp=11,0,0,0,0`;
+			},${this.coords.lng}&cbp=11,0,0,0,0`
 		}
 	},
 	methods: {
 		...mapActions([
-			"setBadWeatherStatus",
-			"updateInfo",
-			"checkWeather",
-			"setPlaceSuggested",
-			"getNewPlace"
-		]),
-		refreshMap() {
-			this.getNewPlace();
-		}
+			'setBadWeatherStatus',
+			'updateInfo',
+			'checkWeather',
+			'setPlaceSuggested',
+			'getNewPlace'
+		])
 	}
-};
+}
 </script>
 
 <style lang="postcss" scoped>

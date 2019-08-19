@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// import * as Vue2Leaflet from "vue2-leaflet";
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 import { mapActions, mapState } from 'vuex'
 import { Icon } from 'leaflet'
@@ -30,12 +29,9 @@ export default {
 	data() {
 		return {
 			zoom: 13,
-			// center: L.latLng(47.41322, -1.219482),
 			url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
 			attribution:
 				'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-			// marker: L.latLng(47.41322, -1.219482),
-
 		}
 	},
 	computed: {
@@ -46,8 +42,6 @@ export default {
 					this.coords.lat,
 					this.coords.lng
 				)
-				// this.$refs.marker.setLatLng(newLatLng);
-				// this.$refs.map.setCenter(newLatLng);
 				return L.latLng(newLatLng)
 			}
 			return L.latLng(47.41322, -1.219482)
@@ -72,12 +66,6 @@ export default {
 			this.setPlaceNotFound(false)
 		}
 	},
-	mounted() {
-		// this.$nextTick(() => {
-		// 	//this.$refs.myMap.mapObject.ANY_LEAFLET_MAP_METHOD();
-		// 	// this.$refs.map.mapObject
-		// });
-	},
 	components: {
 		LMap,
 		LTileLayer,
@@ -96,9 +84,7 @@ export default {
 	/* margin: 20px auto; */
 	background: rgba(24, 83, 79, 0.51);
 	@media only screen and (max-width: 1025px) {
-		flex-basis:100%;
+		flex-basis: 100%;
 	}
-
-
 }
 </style>

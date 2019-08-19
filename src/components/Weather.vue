@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import WeatherMap from "@/components/WeatherMap.vue";
-import WeatherInfo from "@/components/WeatherInfo.vue";
-import WeatherForecast from "@/components/WeatherForecast.vue";
-import TemperatureSetter from "@/components/TemperatureSetter.vue";
-import ForecastTrigger from "@/components/ForecastTrigger.vue";
+import { mapActions, mapState } from 'vuex'
+import WeatherMap from '@/components/WeatherMap.vue'
+import WeatherInfo from '@/components/WeatherInfo.vue'
+import WeatherForecast from '@/components/WeatherForecast.vue'
+import TemperatureSetter from '@/components/TemperatureSetter.vue'
+import ForecastTrigger from '@/components/ForecastTrigger.vue'
 
 export default {
 	data() {
@@ -38,80 +38,80 @@ export default {
 				maximumAge: 0
 			},
 			forecastShown: false
-		};
+		}
 	},
 	computed: {
-		...mapState(["weather", "forecast"]),
+		...mapState(['weather', 'forecast']),
 		days() {
 			const months = [
-				"Янв",
-				"Фев",
-				"Мрт",
-				"Апр",
-				"Май",
-				"Июн",
-				"Июл",
-				"Авг",
-				"Сен",
-				"Окт",
-				"Нбр",
-				"Дек"
-			];
-			const daysArr = [];
+				'Янв',
+				'Фев',
+				'Мрт',
+				'Апр',
+				'Май',
+				'Июн',
+				'Июл',
+				'Авг',
+				'Сен',
+				'Окт',
+				'Нбр',
+				'Дек'
+			]
+			const daysArr = []
 			for (let i = 0; i < 7; i++) {
-				let currentDate = new Date();
-				currentDate.setDate(currentDate.getDate() + i);
+				const currentDate = new Date()
+				currentDate.setDate(currentDate.getDate() + i)
 				daysArr.push(
 					`${currentDate.getDate()} ${months[currentDate.getMonth()]}`
-				);
+				)
 			}
 
-			return daysArr;
+			return daysArr
 		},
 		chartData() {
 			const tempList = this.forecast.list.reduce((memo, curr) => {
-				memo.push(curr.temp.day.toFixed(1));
-				return memo;
-			}, []);
+				memo.push(curr.temp.day.toFixed(1))
+				return memo
+			}, [])
 			return {
 				labels: this.days,
 				datasets: [
 					{
-						backgroundColor: "transparent",
-						borderColor: "rgba(255, 255, 255, 0.8)",
-						borderWidth: "4",
-						pointBorderWidth: "5",
+						backgroundColor: 'transparent',
+						borderColor: 'rgba(255, 255, 255, 0.8)',
+						borderWidth: '4',
+						pointBorderWidth: '5',
 						data: tempList
 					}
 				]
-			};
+			}
 		}
 	},
 	methods: {
-		...mapActions(["updateInfo"]),
+		...mapActions(['updateInfo']),
 		getCurrentLocation() {
 			navigator.geolocation.getCurrentPosition(
 				this.setInitialData,
 				this.initGeoError,
 				this.geoLocationOptions
-			);
+			)
 		},
 		setInitialData(position) {
 			this.updateInfo({
 				lat: position.coords.latitude,
 				lng: position.coords.longitude
-			});
+			})
 		},
 		initGeoError() {
-			console.warn("geo error");
-			this.geolocationFail = true;
+			console.warn('geo error')
+			this.geolocationFail = true
 		},
 		triggerForecast(val) {
-			this.forecastShown = val;
+			this.forecastShown = val
 		}
 	},
 	mounted() {
-		this.getCurrentLocation();
+		this.getCurrentLocation()
 	},
 	components: {
 		WeatherMap,
@@ -120,7 +120,7 @@ export default {
 		TemperatureSetter,
 		ForecastTrigger
 	}
-};
+}
 </script>
 
 <style lang="postcss" scoped>
