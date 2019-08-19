@@ -11,9 +11,11 @@
 			</div>
 			<WeatherMap />
 		</div>
+		<transition name="fade">
 		<div class="forecastWrapper" v-if="forecast && forecastShown">
 			<WeatherForecast :chart-data="chartData" />
 		</div>
+		</transition>
 		<div v-if="geolocationFail">Geolocation fail</div>
 	</main>
 </template>
@@ -155,5 +157,11 @@ export default {
 	border-radius: 5px;
 	padding: 30px 20px 20px;
 	/* box-shadow: 0px 0px 11px 8px rgba(0,0,0,0.1); */
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
