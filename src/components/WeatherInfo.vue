@@ -2,32 +2,42 @@
 	<div class="weatherInfo">
 		<div class="weatherInfo__main">
 			<img
-				:src="`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`"
+				:src="
+					`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
+				"
 				alt=""
 				class="weatherInfo__icon"
 			/>
 			<div class="weatherInfo__temp">{{ weather.main.temp }} &#176;C</div>
 		</div>
-		<ul class="weatherInfo__sun">
+		<!-- <ul class="weatherInfo__sun">
 			<li v-show="sunrise">Рассвет: {{ sunrise }}</li>
 			<li v-show="sunset">Закат: {{ sunset }}</li>
-		</ul>
-		<div v-show="badWeather && !placeNotFound">
+		</ul> -->
+		<div v-show="badWeather && !placeNotFound" class="weatherInfo__bad">
 			Ugh...
 			<span @click="getNewPlace" class="weatherInfo__refresher"
 				>Take me somewhere!</span
 			>
 		</div>
-		<div v-show="!badWeather && !placeSuggested">Looks good</div>
+		<div v-show="!badWeather && !placeSuggested" class="weatherInfo__good">Looks good</div>
+
 		<a
 			:href="googleMapsLink"
 			target="_blank"
 			v-if="placeSuggested"
 			class="googleLink"
 		>
-			link
+			Take a look
 		</a>
-		<div v-show="placeNotFound">
+		<div
+			v-show="!badWeather && placeSuggested"
+			@click="getNewPlace"
+			class="extraLink"
+		>
+			Another?
+		</div>
+		<div v-show="placeNotFound" class="weatherInfo__notFound">
 			Couldn't find the location that is good enough.
 		</div>
 	</div>
@@ -78,10 +88,6 @@ export default {
 	},
 	methods: {
 		...mapActions([
-			'setBadWeatherStatus',
-			'updateInfo',
-			'checkWeather',
-			'setPlaceSuggested',
 			'getNewPlace'
 		])
 	}
@@ -103,7 +109,7 @@ export default {
 	align-items: center;
 }
 
-.weatherInfo__icon{
+.weatherInfo__icon {
 	width: 50px;
 	flex-shrink: 0;
 }
@@ -126,5 +132,10 @@ export default {
 
 .googleLink {
 	color: #fff;
+	margin-bottom: 10px;
+	display: block;
+}
+.extraLink{
+	cursor: pointer;
 }
 </style>

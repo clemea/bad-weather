@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherInfo.vue default template 1`] = `
+<div class="weatherInfo">
+  <div class="weatherInfo__main"><img src="http://openweathermap.org/img/wn/01d.png" alt="" class="weatherInfo__icon">
+    <div class="weatherInfo__temp">18 °C</div>
+  </div>
+  <div class="weatherInfo__bad" style="display: none;">
+    Ugh...
+    <span class="weatherInfo__refresher">Take me somewhere!</span></div>
+  <div class="weatherInfo__good">Looks good</div>
+  <!---->
+  <div class="extraLink" style="display: none;">
+    Another?
+  </div>
+  <div class="weatherInfo__notFound" style="display: none;">
+    Couldn't find the location that is good enough.
+  </div>
+</div>
+`;

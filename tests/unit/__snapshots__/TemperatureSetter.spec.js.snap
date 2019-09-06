@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TemperatureSetter.vue default template 1`] = `<div class="temperatureSetter"><span class="temperatureSetter__text">Set your min temperature</span> <input type="range" min="-50" max="50" step="1" class="temperatureSetter__input"> <span class="temperatureSetter__value">20 °C</span></div>`;

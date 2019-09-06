@@ -77,11 +77,8 @@ export default {
 <style lang="postcss" scoped>
 .map {
 	flex-basis: 900px;
-	/* flex-grow: 1; */
 	width: 100%;
 	height: 300px;
-	/* max-width: 70%; */
-	/* margin: 20px auto; */
 	background: rgba(24, 83, 79, 0.51);
 	@media only screen and (max-width: 1025px) {
 		flex-basis: 100%;

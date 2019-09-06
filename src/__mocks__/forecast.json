@@ -1,0 +1,203 @@
+{
+    "city": {
+        "id": 520077,
+        "name": "Nagatino",
+        "coord": {
+            "lon": 37.6833,
+            "lat": 55.6833
+        },
+        "country": "RU",
+        "population": 0,
+        "timezone": 10800
+    },
+    "cod": "200",
+    "message": 2.9603253,
+    "cnt": 7,
+    "list": [
+        {
+            "dt": 1567501200,
+            "sunrise": 1567478235,
+            "sunset": 1567527643,
+            "temp": {
+                "day": 24,
+                "min": 16.68,
+                "max": 24,
+                "night": 16.68,
+                "eve": 21.75,
+                "morn": 24
+            },
+            "pressure": 1016.42,
+            "humidity": 51,
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04d"
+                }
+            ],
+            "speed": 2.92,
+            "deg": 147,
+            "clouds": 67
+        },
+        {
+            "dt": 1567587600,
+            "sunrise": 1567564750,
+            "sunset": 1567613889,
+            "temp": {
+                "day": 20.62,
+                "min": 13.6,
+                "max": 20.62,
+                "night": 16.17,
+                "eve": 17.65,
+                "morn": 13.6
+            },
+            "pressure": 1014.14,
+            "humidity": 48,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "sky is clear",
+                    "icon": "01d"
+                }
+            ],
+            "speed": 5.29,
+            "deg": 159,
+            "clouds": 0
+        },
+        {
+            "dt": 1567674000,
+            "sunrise": 1567651265,
+            "sunset": 1567700134,
+            "temp": {
+                "day": 16.15,
+                "min": 14.35,
+                "max": 17.25,
+                "night": 14.35,
+                "eve": 16.75,
+                "morn": 14.95
+            },
+            "pressure": 1016.5,
+            "humidity": 79,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.79,
+            "deg": 153,
+            "clouds": 100,
+            "rain": 0.63
+        },
+        {
+            "dt": 1567760400,
+            "sunrise": 1567737780,
+            "sunset": 1567786378,
+            "temp": {
+                "day": 15.59,
+                "min": 12.41,
+                "max": 18.48,
+                "night": 13.7,
+                "eve": 16.85,
+                "morn": 12.41
+            },
+            "pressure": 1018.25,
+            "humidity": 82,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 4.04,
+            "deg": 115,
+            "clouds": 95,
+            "rain": 0.75
+        },
+        {
+            "dt": 1567846800,
+            "sunrise": 1567824295,
+            "sunset": 1567872622,
+            "temp": {
+                "day": 16.05,
+                "min": 12.7,
+                "max": 16.05,
+                "night": 13.92,
+                "eve": 14.45,
+                "morn": 12.7
+            },
+            "pressure": 1020.4,
+            "humidity": 81,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 3.88,
+            "deg": 155,
+            "clouds": 100,
+            "rain": 7.19
+        },
+        {
+            "dt": 1567933200,
+            "sunrise": 1567910810,
+            "sunset": 1567958865,
+            "temp": {
+                "day": 16.45,
+                "min": 12.21,
+                "max": 17.95,
+                "night": 12.21,
+                "eve": 16.67,
+                "morn": 13.56
+            },
+            "pressure": 1024.01,
+            "humidity": 78,
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ],
+            "speed": 3.14,
+            "deg": 138,
+            "clouds": 96
+        },
+        {
+            "dt": 1568019600,
+            "sunrise": 1567997324,
+            "sunset": 1568045109,
+            "temp": {
+                "day": 19.22,
+                "min": 10.53,
+                "max": 21.25,
+                "night": 14.05,
+                "eve": 19.06,
+                "morn": 10.53
+            },
+            "pressure": 1024.89,
+            "humidity": 58,
+            "weather": [
+                {
+                    "id": 802,
+                    "main": "Clouds",
+                    "description": "scattered clouds",
+                    "icon": "03d"
+                }
+            ],
+            "speed": 2.71,
+            "deg": 121,
+            "clouds": 25
+        }
+    ]
+}
