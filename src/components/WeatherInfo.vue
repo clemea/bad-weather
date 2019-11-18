@@ -124,7 +124,7 @@ export default {
 	cursor: pointer;
 	color: #fff;
 	border-bottom: 1px solid #fff;
-	transition: all 0.2s ease-in-out;
+	transition: border-bottom-color 0.2s ease-in-out;
 	&:hover {
 		border-bottom-color: transparent;
 	}
@@ -133,9 +133,22 @@ export default {
 .googleLink {
 	color: #fff;
 	margin-bottom: 10px;
-	display: block;
+	display: inline-flex;
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
+	transition: border-bottom-color 0.2s ease-in-out;
+	&:hover{
+		border-bottom-color: transparent;
+	}
 }
 .extraLink{
 	cursor: pointer;
+	font-size: 16px;
+	opacity: 0.7;
+	transition: opacity 0.2s ease-in-out;
+	&:hover{
+		opacity: 1;
+	}
+
 }
 </style>

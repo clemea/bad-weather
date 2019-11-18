@@ -34,7 +34,7 @@ export default {
 	padding: 10px;
 	font-size: 15px;
 	text-align: center;
-	transition: all 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
 	&:hover{
 		background: rgba(0, 0, 0, 0.5);
 	}

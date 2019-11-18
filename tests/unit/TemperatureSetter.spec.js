@@ -34,12 +34,23 @@ describe('TemperatureSetter.vue', () => {
 		input.element.value = '30'
 		input.trigger('input')
 		expect(wrapper.vm.value).toBe('30')
-		expect(actions.setMinTemp).not.toHaveBeenCalled()
+	})
+	test('change temperature on range', () => {
+		const range = wrapper.find('.temperatureSetter__range')
+		range.element.value = '30'
+		range.trigger('input')
+		expect(wrapper.vm.value).toBe('30')
+	})
+	test('temp overflow min', () => {
+		const input = wrapper.find('.temperatureSetter__input')
+		input.element.value = '200'
+		input.trigger('input')
+		expect(wrapper.html()).toMatchSnapshot()
 	})
 
-	test('trigger store change', () => {
-		const input = wrapper.find('.temperatureSetter__input')
-		input.trigger('change')
-		expect(actions.setMinTemp).toHaveBeenCalled()
-	})
+	// test('trigger store change', () => {
+	// 	const input = wrapper.find('.temperatureSetter__input')
+	// 	input.trigger('change')
+	// 	expect(actions.setMinTemp).toHaveBeenCalled()
+	// })
 })
