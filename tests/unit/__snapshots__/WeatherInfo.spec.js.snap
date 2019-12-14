@@ -14,7 +14,7 @@ exports[`WeatherInfo.vue default template 1`] = `
     Another?
   </div>
   <div class="weatherInfo__notFound" style="display: none;">
-    Couldn't find the location that is good enough.
+    Couldn't find a location that was good enough.
   </div>
 </div>
 `;

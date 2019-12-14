@@ -38,7 +38,7 @@
 			Another?
 		</div>
 		<div v-show="placeNotFound" class="weatherInfo__notFound">
-			Couldn't find the location that is good enough.
+			Couldn't find a location that was good enough.
 		</div>
 	</div>
 </template>
